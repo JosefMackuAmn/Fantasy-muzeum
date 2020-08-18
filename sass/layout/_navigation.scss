@@ -1,0 +1,37 @@
+.navigation {
+    width: 100%;
+    height: 8rem;
+    background-color: $color-brown;
+    padding: 1.25rem 8rem;
+    box-shadow: 0 .3rem 1rem .1rem $color-white-overlay;
+
+    display: flex;
+    justify-content: space-between;
+
+    position: fixed;
+    z-index: 1000;
+
+    &__list {
+        list-style: none;
+
+        display: flex;
+        align-items: center;
+    }
+    &__logo {
+        height: 100%;
+    }
+    &__item {
+        color: $color-gold;
+        font-size: $font-big;
+        text-transform: uppercase;
+        letter-spacing: .2rem;
+
+        &:not(:last-child) {
+            margin-right: 5rem;
+        }
+
+        & a {
+            color: inherit;
+        }
+    }
+}

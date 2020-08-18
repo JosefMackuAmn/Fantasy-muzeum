@@ -1,0 +1,62 @@
+.about {
+    width: 100%;
+    height: 100%;
+    
+    display: flex;
+
+    &__left {
+        width: 40%;
+        margin-left: 15rem;
+        padding: 10rem 8rem 10rem 8rem;
+        background-color: $color-brown-overlay-light;
+        clip-path: polygon(0 2.5rem, 2.5rem 0, 100% 0, 100% 100%, 2.5rem 100%, 0 calc(100% - 2.5rem));
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        & .heading-4 {
+            margin-bottom: 5rem;
+        }
+        & .paragraph {
+            margin-bottom: 10rem;
+        }
+    }
+    &__right {
+        width: 60%;
+        margin-left: 20rem;
+
+        position: relative;
+
+        &::after {
+            content: "";
+            display: block;
+            width: 80%;
+            height: 120%;
+            background-color: $color-gold-poly;
+            clip-path: polygon(50% 0%, 100% 0%, 100% calc(0% + .2rem), 50% calc(0% + .2rem), calc(0% + .2rem) calc(30% + .2rem), calc(0% + .2rem) calc(70% - .2rem), 50% calc(100% - .2rem), 50% 100%, 0% 70%, 0% 30%);
+            transform: translateY(-7.5%);
+
+            float: right;
+        }
+
+        &__image {
+            width: 60rem;
+            height: 45rem;
+            border-radius: .5rem 0 0 .5rem;
+            border: .1rem solid $color-brown-light;
+
+            position: absolute;
+            top: 7.5rem;
+            right: 0;
+            z-index: 2;
+
+            & img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                border-radius: .5rem 0 0 .5rem;
+            }
+        }
+    }
+}

@@ -1,0 +1,38 @@
+.heading-1 {
+    font-family: 'Goudy Bookletter 1911', serif;
+    color: $color-beige-light;
+    font-size: $font-largest;
+    text-transform: uppercase;
+    letter-spacing: 1rem;
+    text-align: center;
+}
+
+.heading-2 {
+    color: $color-beige-light;
+    font-size: $font-large;
+    font-family: 'Goudy Bookletter 1911', serif;
+    line-height: 135%;
+    text-transform: uppercase;
+    letter-spacing: .5rem;
+    margin-bottom: 15rem;
+}
+
+.heading-3 {
+    font-family: 'Goudy Bookletter 1911', serif;
+    color: $color-gold;
+    font-size: $font-bigger;
+    letter-spacing: .3rem;
+    line-height: 160%;
+}
+
+.heading-4 {
+    color: $color-orange;
+    font-size: $font-biggest;
+    letter-spacing: .4rem;
+}
+
+.paragraph {
+    color: $color-orange-light;
+    line-height: 155%;
+    font-size: $font-1_7;
+}

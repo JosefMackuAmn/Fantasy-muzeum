@@ -1,0 +1,40 @@
+////// Colors
+// Golden
+$color-gold: rgba(159, 141, 93, 1);
+$color-gold-poly: rgba(159, 141, 93, 0.4);
+
+// Beige
+$color-beige-light: rgba(237, 221, 221, 1);
+
+// Orange
+$color-orange: rgba(198, 135, 56, 1);
+$color-orange-light: rgba(255, 249, 243, 1);
+$color-orange-brown: rgba(37, 27, 17, 1);
+
+// White
+$color-white: rgba(255, 255, 255, 1);
+
+// Brown
+$color-brown: rgba(24, 17, 11, 1);
+$color-brown-light: #594A37;
+$color-brown-overlay: rgba($color-brown-light, .97);
+$color-brown-overlay-light: rgba($color-brown-light, .8);
+
+// Shades
+$color-black: black;
+$color-black-overlay: rgba(24, 17, 11, 0.5);
+$color-black-overlay-dark: rgba(black, .95);
+
+$color-white: white;
+$color-white-overlay-dark: rgba(white, .2);
+$color-white-overlay: rgba(white, .1);
+
+///// Font-sizes
+$font-small: 1.6rem;
+$font-1_7: 1.7rem;
+$font-regular: 2rem;
+$font-big: 2.3rem;
+$font-bigger: 2.5rem;
+$font-biggest: 4rem;
+$font-large: 5rem;
+$font-largest: 7rem;

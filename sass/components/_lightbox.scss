@@ -1,0 +1,23 @@
+.lightbox {
+    width: 30%;
+    padding: 5rem;
+    background-image: radial-gradient(rgba($color-white, .5), rgba($color-white, .35), rgba($color-white, .22), rgba($color-white, .11) 30%, rgba($color-white, .05), rgba($color-white, .02), rgba($color-white, .01), rgba($color-white, .003), transparent 70%);
+    background-size: 100% 100%;
+    background-position-y: top;
+    background-repeat: no-repeat;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__image {
+        height: 42rem;
+        filter: drop-shadow(0 0 .3rem black);
+    }
+    & .heading-3 {
+        height: 3rem;
+        margin-top: 4rem;
+        text-align: center;
+        text-transform: uppercase;
+    }
+}

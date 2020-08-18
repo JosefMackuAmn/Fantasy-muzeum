@@ -1,0 +1,19 @@
+.contact-line {
+    list-style-type: none;
+    width: 100%;
+    padding: 1.75rem 8rem;
+    background-color: $color-black-overlay-dark;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    position: absolute;
+    left: 0;
+    bottom: 0;
+
+    &__item {
+        font-size: $font-regular;
+        color: $color-beige-light;
+    }
+}

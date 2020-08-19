@@ -11,7 +11,7 @@
     align-items: center;
 
     &__image {
-        height: 42rem;
+        height: 27rem;
         filter: drop-shadow(0 0 .3rem black);
     }
     & .heading-3 {
@@ -19,5 +19,6 @@
         margin-top: 4rem;
         text-align: center;
         text-transform: uppercase;
+        font-size: $font-regular;
     }
 }

@@ -1,12 +1,36 @@
 .contact {
     height: calc(100vh - 5rem);
 
+    @media only screen and (max-height: 750px) {
+        min-height: calc(100vh - 5rem);
+        height: unset;
+    }
+
     &__content {
         height: 100%;
 
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+
+        @media only screen and (max-width: 1000px) {
+            flex-direction: column-reverse;
+            align-items: center;
+        }
+
+        & .heading--mobile {            
+            order: 2;
+            margin-top: 16rem;
+            margin-bottom: 8rem;
+            @media only screen and (min-width: 1001px) {
+                display: none;
+            }
+        }
+        & .heading--desktop {
+            @media only screen and (max-width: 1000px) {
+                display: none;
+            }
+        }
     }
 
     &__upper-row {
@@ -19,6 +43,11 @@
         @media only screen and (max-height: 845px) {
             padding-bottom: 6rem;
         }
+        @media only screen and (max-width: 1000px) {
+            justify-content: center;
+            padding: 0;
+            padding-bottom: 8rem;
+        }
 
         &__list {
             list-style: none;
@@ -26,6 +55,13 @@
 
             display: flex;
             align-items: flex-end;
+            
+            @media only screen and (max-width: 1000px) {
+                flex-direction: column;
+                align-items: center;
+                margin-left: unset;
+                width: 100%;
+            }
 
             & li {
                 color: $color-beige-light;
@@ -34,17 +70,56 @@
                 display: flex;
                 align-items: center;
 
+                @media only screen and (max-width: 1000px) {
+                    font-size: $font-bigger;
+                }
+
                 &:not(:last-child) {
                     margin-right: 5rem;
+
+                    @media only screen and (max-width: 1000px) {
+                        flex-direction: column;
+                        margin-right: unset;
+                        margin-bottom: 12rem;
+                    }
                 }
 
                 &:last-child {
                     margin-right: -1rem;
+
+                    @media only screen and (max-width: 1000px) {
+                        margin-right: unset;
+                        width: 100%;
+                        height: 16rem;
+                        background-color: $color-brown-overlay-lightest;
+                        justify-content: space-evenly;
+
+                        & > a {
+                            width: 6rem;
+                            height: 6rem;
+    
+                            & > img {
+                                width: 6rem;
+                                height: 6rem;
+                            }
+                        }
+                    }
                 }
 
                 & > img, & > a {
                     margin-right: 1rem;
                     height: $font-bigger;
+
+                    @media only screen and (max-width: 1000px) {
+                        margin-right: unset;
+                    }
+                }
+
+                & > img {
+                    @media only screen and (max-width: 1000px) {
+                        margin-bottom: 2rem;
+                        height: $font-largest;
+                    }
                 }
             }
         }
@@ -65,6 +140,12 @@
         @media only screen and (max-height: 845px) {
             padding: 0 16rem 8rem 16rem;
         }
+        @media only screen and (max-width: 1000px) {
+            flex-direction: column-reverse;
+            align-items: center;
+            padding: 0;
+            padding-bottom: 12rem;
+        }
                 
         & .squares {
             width: 13%;
@@ -77,6 +158,9 @@
             }
             @media only screen and (min-height: 1300px) and (min-width: 2100px) {
                 width: 12%;
+            }
+            @media only screen and (max-width: 1000px) {
+                display: none;
             }
 
             &--1 {
@@ -108,12 +192,27 @@
                 width: 50%;
                 margin-right: 15%;
             }
+            @media only screen and (max-height: 750px) {
+                height: 40rem;
+            }
+            @media only screen and (max-width: 1000px) {
+                margin-right: unset;
+                margin-top: 5rem;
+                width: 80%;
+            }
+
         }
 
         &__list {
             list-style: none;
 
             transform: translateZ(0);
+
+            @media only screen and (max-width: 1000px) {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
 
             & li {
                 color: $color-orange;

@@ -8,6 +8,10 @@ html {
     font-size: 62.5%;
     font-family: 'Nova Flat', cursive;
     box-sizing: border-box;
+
+    @media only screen and (max-width: 1300px) {
+        font-size: 50%;
+    }
 }
 
 body {

@@ -21,17 +21,36 @@
             position: absolute;
             left: 0;
             top: 0;
-        }
+        }  
+    }
+
+    & .heading-1 {
+        font-size: $font-large;
     }
 
     &__features {
         width: 100%;
-        height: 90rem;
-        padding: 20rem;
+        padding: 12rem 10rem 20rem 10rem;
 
         display: flex;
         align-items: center;
         justify-content: space-between;
+
+        position: relative;
+
+        & .squares {
+            width: 14%;
+
+            &--1 {
+                left: 0;
+                top: 0;
+            }
+            &--2 {
+                transform: rotate(90deg) translateY(25%);
+                right: 0;
+                bottom: -25%;
+            }
+        }
     }
 
     &__gallery-link {
@@ -40,6 +59,20 @@
         padding: 20rem;
 
         position: relative;
+
+        & .heading-2 {
+            font-size: $font-biggest;
+        }
+
+        &__head {
+            height: 150%;
+            transform: translate(-50%, -25%) rotate(20deg);
+            
+            position: absolute;
+            left: 0;
+            
+            transition: left .2s;            
+        }
     }
 
     &__about {

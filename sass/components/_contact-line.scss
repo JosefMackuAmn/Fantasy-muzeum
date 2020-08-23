@@ -10,10 +10,32 @@
 
     position: absolute;
     left: 0;
-    bottom: 0;
+    bottom: -1px;
+
+    @media only screen and (max-width: 950px) {
+        flex-direction: column;
+
+        &__item {
+            &:nth-child(1) {
+                margin-bottom: 2rem;
+            }
+            &:nth-child(2) {
+                display: none;
+            }
+        }
+    }
 
     &__item {
         font-size: $font-regular;
         color: $color-beige-light;
+        text-align: center;
+        line-height: 175%;
+    }
+    &__br {
+        display: none;
+
+        @media only screen and (max-width: 950px) {
+            display: block;
+        }
     }
 }

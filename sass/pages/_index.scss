@@ -1,5 +1,5 @@
 .index {
-    padding: 15rem 0;
+    padding: 15rem 0 0 0;
 
     &__header {
         width: 100%;
@@ -22,10 +22,6 @@
             left: 0;
             top: 0;
         }
-    }
-
-    & .heading-1 {
-        font-size: $font-large;
     }
 
     &__features {
@@ -66,9 +62,28 @@
         padding: 20rem;
 
         position: relative;
+        
+        @media only screen and (max-width: 550px) {
+            height: 60rem;
+            margin-top: 15rem;
+            padding: 0;
+        }
+        @media only screen and (max-width: 500px) {
+            margin-top: 10rem;
+        }
+        @media only screen and (max-width: 350px) {
+            margin-top: -5rem;
+        }
 
         & .heading-2 {
             font-size: $font-biggest;
+
+            @media only screen and (max-width: 500px) {
+                font-size: $font-bigger-2;
+            }
+            @media only screen and (max-width: 350px) {
+                font-size: $font-bigger;
+            }
         }
 
         &__head {
@@ -78,9 +93,9 @@
             position: absolute;
             left: 0;
             
-            transition: left .2s;
+            transition: all .2s;
             
-            @media only screen and (max-width: 800px) {
+            @media only screen and (max-width: 1000px) {
                 display: none;
             }
         }
@@ -88,8 +103,15 @@
 
     &__about {
         width: 100%;
-        padding: 20rem 0;
-        padding-top: 10rem;
+        padding: 20rem 15rem;
+        
+        @media only screen and (max-width: 1000px) {
+            padding: 20rem 7.5rem;
+            margin-top: -5rem;
+        }
+        @media only screen and (max-width: 500px) {
+            padding: 15rem 5rem;
+        }
 
         & .heading-2 {
             margin-bottom: 15rem;

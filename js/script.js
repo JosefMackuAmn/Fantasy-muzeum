@@ -24,7 +24,8 @@ ready(() => {
             if (movableHead) {
                 let scrollTop = window.pageYOffset;
                 let moveHeadInRem = ((scrollTop / 100) * 1.2) - 15;
-                movableHead.style.left = moveHeadInRem + 'rem';
+                movableHead.style.left = (2 * moveHeadInRem) + 'rem';
+                movableHead.style.top = -(moveHeadInRem / 2 - 15) + 'rem';
             }
         });
     }

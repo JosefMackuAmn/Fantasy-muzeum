@@ -1,0 +1,97 @@
+.atelier {
+    width: 100vw;
+    min-height: 90rem;
+    height: calc(100vh - 5rem);
+
+    &__content {
+        height: 100%;
+        width: 100%;
+
+        position: relative;
+        z-index: 2;
+    }
+
+    &__grid {
+        height: 100%;
+        width: 100%;
+        
+        display: grid;
+        grid-template-rows: 2fr 4fr 2fr;
+        grid-template-columns: 4fr 2fr 3fr;
+        grid-template-areas: "head righttext-1 righttext-1"
+                            "foto-1 foto-2 righttext-2"
+                            "lefttext lefttext kontakt";
+    }
+    
+    & .heading-2 {
+        padding: 16rem 8rem 8rem 8rem;
+
+        color: $color-white;
+
+        grid-area: head;
+        align-self: end;
+    }
+
+    &__text-1 {
+        grid-area: righttext-1;
+        align-self: end;
+        margin-bottom: 8rem;
+    }
+
+    &__text-2 {
+        grid-area: lefttext;
+        margin-left: 10rem;
+        margin-top: 10rem;
+    }
+
+    & .foto {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+
+        &--1 {
+            grid-area: foto-1;
+        }
+
+        &--2 {
+            grid-area: foto-2;
+        }
+    }
+
+    &__mid-right {
+        margin-left: 10rem;
+
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-around;
+        
+        grid-area: righttext-2;
+
+        &__text-1 {
+        }
+
+        &__text-2 {
+
+        }
+    }
+    
+    & .link {
+        grid-area: kontakt;        
+        display: block;
+        margin-top: 10rem;
+    }
+    & .squares {
+        width: 12.5%;
+        transform: rotate(90deg);
+        right: 23%;
+        bottom: 2%;
+        z-index: -1;
+        justify-items: stretch;
+    }
+
+    &__link {
+        justify-self: end;
+        margin-right: 16rem;
+    }
+}

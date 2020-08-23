@@ -11,12 +11,17 @@
     align-items: center;
     
     @media only screen and (max-width: 800px) {
+        width: 50%;
         margin-bottom: 8rem;
     }
 
     &__image {
         height: 27rem;
         filter: drop-shadow(0 0 .3rem black);
+
+        @media only screen and (max-width: 800px) and (min-width: 650px) {
+            height: 40rem;
+        }
     }
     & .heading-3 {
         height: 3rem;

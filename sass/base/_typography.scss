@@ -1,11 +1,15 @@
 .heading-1 {
     font-family: 'Goudy Bookletter 1911', serif;
     color: $color-beige-light;
-    font-size: $font-largest;
+    font-size: $font-large;
     text-transform: uppercase;
     letter-spacing: 1rem;
     text-align: center;
-    margin: 0 10rem;
+    margin: 0 5rem;
+
+    @media only screen and (max-width: 700px) {
+        font-size: $font-biggest;
+    }
 }
 
 .heading-2 {
@@ -35,4 +39,23 @@
     color: $color-orange-light;
     line-height: 155%;
     font-size: $font-1_7;
+}
+
+.paragraph--yellow {
+    color: $color-orange;
+    font-size: $font-bigger;
+    line-height: 160%;
+
+    @media only screen and (min-height: 1200px) and (min-width: 2100px) {
+        font-size: $font-bigger-2;
+    }
+
+    & span {
+        font-size: $font-bigger-2;
+        color: $color-beige-light;
+
+        @media only screen and (min-height: 1200px) and (min-width: 2100px) {
+            font-size: $font-biggest;
+        }
+    }
 }

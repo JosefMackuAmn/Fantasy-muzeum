@@ -21,7 +21,7 @@
             position: absolute;
             left: 0;
             top: 0;
-        }  
+        }
     }
 
     & .heading-1 {
@@ -37,6 +37,13 @@
         justify-content: space-between;
 
         position: relative;
+
+        @media only screen and (max-width: 1400px) {
+            padding: 12rem 5rem 20rem 5rem;
+        }
+        @media only screen and (max-width: 800px) {
+            flex-direction: column;
+        }
 
         & .squares {
             width: 14%;
@@ -71,7 +78,11 @@
             position: absolute;
             left: 0;
             
-            transition: left .2s;            
+            transition: left .2s;
+            
+            @media only screen and (max-width: 800px) {
+                display: none;
+            }
         }
     }
 

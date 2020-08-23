@@ -9,6 +9,10 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    
+    @media only screen and (max-width: 800px) {
+        margin-bottom: 8rem;
+    }
 
     &__image {
         height: 27rem;
@@ -19,6 +23,10 @@
         margin-top: 4rem;
         text-align: center;
         text-transform: uppercase;
-        font-size: $font-regular;
+        font-size: $font-big;
+
+        @media only screen and (max-width: 1400px) {
+            font-size: $font-regular;
+        }
     }
 }

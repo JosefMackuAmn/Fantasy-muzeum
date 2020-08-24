@@ -19,6 +19,10 @@
     line-height: 135%;
     text-transform: uppercase;
     letter-spacing: .5rem;
+
+    @media only screen and (max-width: 700px) {
+        font-size: $font-biggest;
+    }
 }
 
 .heading-3 {
@@ -48,14 +52,24 @@
 
     @media only screen and (min-height: 1200px) and (min-width: 2100px) {
         font-size: $font-bigger-2;
+    }    
+    @media only screen and (max-width: 1100px) {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
     }
 
     & span {
-        font-size: $font-bigger-2;
+        font-size: $font-bigger-3;
         color: $color-beige-light;
 
         @media only screen and (min-height: 1200px) and (min-width: 2100px) {
             font-size: $font-biggest;
+        }
+        @media only screen and (max-width: 1100px) {
+            font-size: $font-bigger;
         }
     }
 }

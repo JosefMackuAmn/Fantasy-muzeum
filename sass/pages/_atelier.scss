@@ -3,6 +3,10 @@
     min-height: 90rem;
     height: calc(100vh - 5rem);
 
+    @media only screen and (max-width: 1100px) {
+        height: auto;
+    }
+
     &__content {
         height: 100%;
         width: 100%;
@@ -18,43 +22,110 @@
         display: grid;
         grid-template-rows: 2fr 4fr 2fr;
         grid-template-columns: 4fr 2fr 3fr;
-        grid-template-areas: "head righttext-1 righttext-1"
-                            "foto-1 foto-2 righttext-2"
-                            "lefttext lefttext kontakt";
+        grid-template-areas: "heading text-1 text-1"
+                             "photo-1 photo-2 text-2"
+                             "text-3 text-3 contact";
+
+                            
+        @media only screen and (max-width: 1100px) {
+            grid-template-rows: repeat(6, auto);
+            grid-template-columns: 1fr;
+            grid-template-areas: "heading"
+                                 "text-1"
+                                 "photo-1"
+                                 "photo-2"
+                                 "contact"
+                                 "text-2";
+            justify-items: center;
+            align-items: center;
+        }
+    }
+
+    &__mobile {
+        &__text-1 {
+            margin-bottom: 16rem;
+
+            grid-area: photo-1;
+            z-index: 2;
+            align-self: end;
+            
+            @media only screen and (min-width: 1101px) {
+                display: none;
+            }
+        }
+        &__text-2 {
+            margin-bottom: 20rem;
+
+            grid-area: text-2;
+
+            @media only screen and (min-width: 1101px) {
+                display: none;
+            }
+        }
     }
     
     & .heading-2 {
         padding: 16rem 8rem 8rem 8rem;
 
-        color: $color-white;
+        color: $color-beige-light;
 
-        grid-area: head;
+        grid-area: heading;
         align-self: end;
+
+        @media only screen and (max-width: 1100px) {
+            padding: 16rem 0 8rem 0;
+        }
     }
 
     &__text-1 {
-        grid-area: righttext-1;
+        grid-area: text-1;
         align-self: end;
         margin-bottom: 8rem;
+
+        @media only screen and (max-width: 1100px) {
+            margin: 8rem 0 12rem 0;
+
+            align-self: center;
+        }
     }
 
-    &__text-2 {
-        grid-area: lefttext;
+    &__text-3 {
+        grid-area: text-3;
         margin-left: 10rem;
         margin-top: 10rem;
+
+        @media only screen and (max-width: 1100px) {
+            margin: 0;
+            margin-bottom: 16rem;
+
+            grid-area: photo-2;
+            z-index: 2;
+            align-self: end;
+        }
     }
 
     & .foto {
         height: 100%;
         width: 100%;
         object-fit: cover;
+        filter: brightness(.8);
 
         &--1 {
-            grid-area: foto-1;
+            grid-area: photo-1;
+
+            @media only screen and (max-width: 1100px) {
+                height: 70rem;
+                margin-bottom: 12rem;
+            }
         }
 
         &--2 {
-            grid-area: foto-2;
+            grid-area: photo-2;
+
+            @media only screen and (max-width: 1100px) {
+                height: 70rem;
+                margin-bottom: 12rem;
+            }
         }
     }
 
@@ -66,20 +137,21 @@
         align-items: flex-start;
         justify-content: space-around;
         
-        grid-area: righttext-2;
+        grid-area: text-2;
 
-        &__text-1 {
-        }
-
-        &__text-2 {
-
+        @media only screen and (max-width: 1100px) {
+            display: none;
         }
     }
     
     & .link {
-        grid-area: kontakt;        
+        grid-area: contact;        
         display: block;
         margin-top: 10rem;
+
+        @media only screen and (max-width: 1100px) {
+            margin: 0;
+        }
     }
     & .squares {
         width: 12.5%;
@@ -93,5 +165,20 @@
     &__link {
         justify-self: end;
         margin-right: 16rem;
+        
+        @media only screen and (max-width: 1100px) {
+            margin-right: 0;
+            margin-bottom: 12rem;
+
+            justify-self: center;
+        }
+    }
+    &__br--mobile {
+        content: " ";
+        line-height: 100%;
+
+        @media only screen and (min-width: 1101px) {
+            display: none;
+        }
     }
 }

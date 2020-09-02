@@ -12,9 +12,10 @@
     <header class="header">
         <nav class="navigation">
             <img src="./imgs/logo-ponorka.png" alt="Logo" class="navigation__logo">
-            <ul class="navigation__list">
+            <div class="navigation__menu" id="menu-btn">MENU</div>
+            <ul class="navigation__list" id="navigation-list">
                 <li class="navigation__item"><a href="index.html">Domů</a></li>
-                <li class="navigation__item"><a href="gallery.html">Fotogalerie</a></li>
+                <li class="navigation__item active"><a href="gallery.html">Fotogalerie</a></li>
                 <li class="navigation__item"><a href="atelier.html">Fotoateliér</a></li>
                 <li class="navigation__item"><a href="contact.html">Kontakt</a></li>
             </ul>
@@ -24,19 +25,34 @@
         <div class="gallery__heading">
             <h2 class="heading-2">FOTOGALERIE</h2>
             <ul class="gallery__list">
-                <li>Galerie</li>
+                <li class="active">Muzeum</li>
                 <li>Fotoateliér</li>
             </ul>
             <a href="/atelier.html" class="link">Vyfoťte se u nás -></a>
         </div>
+        <div class="gallery__scrollbar" id="scrollbar">
+            <div class="gallery__scrollbar__thumb" id="thumb"></div>
+        </div>
         <div class="gallery__photos" id="gallery-photos">
             <img src="./imgs/atelier-1.jpg" alt="Fotka" class="gallery__photo gallery__photo--1">
-            <img src="./imgs/hero.jpg" alt="Fotka" class="gallery__photo gallery__photo--2">
+            <img src="./imgs/hero-edited-1024.jpg" alt="Fotka" class="gallery__photo gallery__photo--2">
             <img src="./imgs/atelier-1.jpg" alt="Fotka" class="gallery__photo gallery__photo--3">
-            <img src="./imgs/hero.jpg" alt="Fotka" class="gallery__photo gallery__photo--4">
+            <img src="./imgs/hero-edited-1024.jpg" alt="Fotka" class="gallery__photo gallery__photo--4">
             <img src="./imgs/atelier-1.jpg" alt="Fotka" class="gallery__photo gallery__photo--5">
-            <img src="./imgs/hero.jpg" alt="Fotka" class="gallery__photo gallery__photo--6">
+            <img src="./imgs/hero-edited-1024.jpg" alt="Fotka" class="gallery__photo gallery__photo--6">
         </div>
+        <div class="gallery__mobile">
+            <h2 class="heading-2">FOTOGALERIE</h2>
+            <h3 class="heading-3">Muzeum</h3>
+            <img src="./imgs/atelier-1.jpg" alt="Fotka" class="gallery__mobile__photo">
+            <img src="./imgs/hero-edited-1024.jpg" alt="Fotka" class="gallery__mobile__photo">
+            <img src="./imgs/atelier-1.jpg" alt="Fotka" class="gallery__mobile__photo">
+            <h3 class="heading-3">Fotoateliér</h3>
+            <img src="./imgs/atelier-1.jpg" alt="Fotka" class="gallery__mobile__photo">
+            <img src="./imgs/hero-edited-1024.jpg" alt="Fotka" class="gallery__mobile__photo">
+            <img src="./imgs/atelier-1.jpg" alt="Fotka" class="gallery__mobile__photo">
+        </div>
+        <p class="paragraph">Foto:<br><br>Dvorní fotograf Fantasy muzea a galerie,<br>pan Pavel Němec. Děkujeme!</p>
     </main>
     <footer class="footer">
         <div class="footer__copyright">&copy; Fantasy muzeum & galerie</div>

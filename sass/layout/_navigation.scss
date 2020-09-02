@@ -11,11 +11,34 @@
     position: fixed;
     z-index: 1000;
 
+    @media only screen and (max-width: 750px) {
+        padding: 1.25rem 4rem;
+    }
+
     &__list {
         list-style: none;
 
         display: flex;
         align-items: center;
+
+        @media only screen and (max-width: 750px) {
+            padding: 6rem 5rem 6rem 10rem;
+            background-color: $color-brown;
+            opacity: 0;
+
+            flex-direction: column;
+
+            position: fixed;
+            top: 7.9rem;
+            right: -100%;
+
+            transition: right .2s ease-out, opacity .15s ease-out;
+        }
+
+        &.opened {
+            right: 0;
+            opacity: 1;
+        }
     }
     &__logo {
         height: 100%;
@@ -26,12 +49,62 @@
         text-transform: uppercase;
         letter-spacing: .2rem;
 
+        position: relative;
+
+        @media only screen and (max-width: 750px) {
+            width: 100%;
+
+            font-size: $font-bigger;
+            text-align: right;
+        }
+
         &:not(:last-child) {
             margin-right: 5rem;
+
+            @media only screen and (max-width: 750px) {
+                margin: 0;
+                margin-bottom: 4rem;
+            }
+        }
+
+        &.active {
+            &::after {
+                content: "";
+                display: block;
+                width: 120%;
+                height: 2px;
+                background-color: $color-gold;
+                transform: translateX(-50%);
+
+                position: absolute;
+                bottom: -.75rem;
+                left: 50%;
+                
+                @media only screen and (max-width: 750px) {
+                    width: 2px;
+                    transform: translateY(-50%);
+                    height: 120%;
+
+                    left: -4rem;
+                    top: 50%;
+                    bottom: unset;
+                }
+            }
         }
 
         & a {
             color: inherit;
+        }
+    }
+    &__menu {
+        cursor: pointer;
+
+        font-family: 'Goudy Bookletter 1911', 'serif';
+        font-size: $font-biggest;
+        color: $color-gold;
+
+        @media only screen and (min-width: 751px) {
+            display: none;
         }
     }
 }

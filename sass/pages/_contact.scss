@@ -1,5 +1,6 @@
 .contact {
     height: calc(100vh - 5rem);
+    overflow: hidden;
 
     @media only screen and (max-height: 750px) {
         min-height: calc(100vh - 5rem);
@@ -203,6 +204,7 @@
                 margin-right: unset;
                 margin-top: 5rem;
                 width: 80%;
+                height: 40rem;
             }
 
         }
@@ -229,6 +231,14 @@
 
                 &:nth-child(3) {
                     margin-bottom: 7rem;
+                }
+                &:nth-child(4) {
+                    margin-bottom: 7rem;
+
+                    @media only screen and (max-width: 1000px) {
+                        margin: 0 10rem 7rem 10rem;
+                        text-align: center;
+                    }
                 }
 
                 & span {

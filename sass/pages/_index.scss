@@ -12,6 +12,7 @@
             height: 100vh;
             object-fit: cover;
             object-position: top;
+            filter: saturate(90%) contrast(90%) brightness(120%) sepia(30%);
         }
         &__overlay {
             width: 100%;

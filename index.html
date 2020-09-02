@@ -12,14 +12,22 @@
     <header class="index__header header">
         <nav class="navigation">
             <img src="./imgs/logo-ponorka.png" alt="Logo" class="navigation__logo">
-            <ul class="navigation__list">
-                <li class="navigation__item"><a href="index.html">Domů</a></li>
+            <div class="navigation__menu" id="menu-btn">MENU</div>
+            <ul class="navigation__list" id="navigation-list">
+                <li class="navigation__item active"><a href="index.html">Domů</a></li>
                 <li class="navigation__item"><a href="gallery.html">Fotogalerie</a></li>
                 <li class="navigation__item"><a href="atelier.html">Fotoateliér</a></li>
                 <li class="navigation__item"><a href="contact.html">Kontakt</a></li>
             </ul>
         </nav>
-        <img src="imgs/hero.jpg" class="index__header__image"></img>
+        <img class="index__header__image" alt="Robot"
+            src="imgs/hero-edited-1920.jpg"
+            srcset="imgs/hero-edited-1920.jpg 1920w,
+                    imgs/hero-edited-1600.jpg 1600w,
+                    imgs/hero-edited-1024.jpg 1024w,
+                    imgs/hero-edited-768.jpg 768w"
+                    sizes="100vw"
+        ></img>
         <div class="index__header__overlay"></div>
         <ul class="contact-line">
             <li class="contact-line__item">Brno - venkov, Černvír 30</li>
@@ -46,11 +54,17 @@
             <img src="imgs/squares-long.svg" alt="Čtverečky" class="squares squares--2">
         </section>
         <section class="index__gallery-link">
-            <img src="imgs/hlava.png" alt="Hlava robota" class="index__gallery-link__head" id="movable-head">
+            <img class="index__gallery-link__head" alt="Hlava robota" id="movable-head"
+                 src="imgs/hlava.png"
+                 srcset="imgs/hlava-900.png 900w,
+                         imgs/hlava-600.png 600w,
+                         imgs/helper.png 10w"
+                 sizes="(max-width: 1000px) 1px,
+                        33vw" >
             <div class="gallery-link">
                 <div class="gallery-link__content">
                     <h2 class="heading-2">Svět fantazie Julese Verna</h2>
-                    <img src="imgs/ponorka.jpg" alt="Ponorka" class="gallery-link__image">
+                    <img src="imgs/ponorka.png" alt="Ponorka" class="gallery-link__image">
                     <img src="imgs/squares.svg" alt="Čtverečky" class="squares">
                 </div>
                 <a href="gallery.html" class="gallery-link__link link">Fotogalerie<br>-></a>
@@ -69,7 +83,7 @@
                 </div>
                 <div class="about__right">
                     <div class="about__right__image">
-                        <img src="imgs/couple.jpg" alt="Krištofovi" class="about__right__image__author">
+                        <img src="imgs/kristofovi.jpg" alt="Krištofovi" class="about__right__image__author">
                         <a href="/contact.html" class="link">Kontakt -></a>
                         <img src="imgs/squares.svg" alt="Čtverečky" class="squares">
                     </div>

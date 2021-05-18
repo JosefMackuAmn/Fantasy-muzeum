@@ -1,3 +1,22 @@
+@font-face {
+    font-family: 'Goudy Bookletter 1911';
+    src: url('../fonts/GoudyBookletter1911-Regular.eot'); /* IE9 Compat Modes */
+    src: url('../fonts/GoudyBookletter1911-Regular.woff2') format('woff2'), /* Super Modern Browsers */
+         url('../fonts/GoudyBookletter1911.woff') format('woff'), /* Pretty Modern Browsers */
+         url('../fonts/GoudyBookletter1911.ttf')  format('truetype'), /* Safari, Android, iOS */
+         url('../fonts/GoudyBookletter1911.svg') format('svg'); /* Legacy iOS */
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Fira';
+    src: url('../fonts/FiraMono-Regular.eot'); /* IE9 Compat Modes */
+    src: url('../fonts/FiraMono-Regular.woff2') format('woff2'), /* Super Modern Browsers */
+         url('../fonts/FiraMono-Regular.woff') format('woff'), /* Pretty Modern Browsers */
+         url('../fonts/FiraMono-Regular.ttf')  format('truetype'), /* Safari, Android, iOS */
+         url('../fonts/FiraMono-Regular.svg') format('svg'); /* Legacy iOS */
+    font-display: swap;
+}
+
 @import 'abstracts/variables';
 @import 'abstracts/animations';
 @import 'abstracts/mixins';

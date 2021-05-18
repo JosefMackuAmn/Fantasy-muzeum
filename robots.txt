@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /*.js
+
+User-agent: *
+Allow: /

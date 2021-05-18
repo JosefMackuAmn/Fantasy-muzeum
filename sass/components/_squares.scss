@@ -1,3 +1,7 @@
 .squares {
     position: absolute;
+
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+        display: none;
+    }
 }

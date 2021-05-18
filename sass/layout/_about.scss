@@ -28,6 +28,7 @@
 
         & .heading-4 {
             margin-bottom: 5rem;
+            font-family: 'Goudy Bookletter 1911', serif;
         }
         & .paragraph {
             margin-bottom: 10rem;
@@ -78,7 +79,6 @@
         } */
 
         &__image {
-            width: 75%;
             height: 60rem;
 
             display: flex;
@@ -87,6 +87,9 @@
 
             position: relative;
 
+            @media not all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+                width: 75%;
+            }
             @media only screen and (max-width: 1500px) {
                 width: 100%;
             }

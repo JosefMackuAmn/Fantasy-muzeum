@@ -6,7 +6,7 @@
 
 html {
     font-size: 62.5%;
-    font-family: 'Nova Flat', cursive;
+    font-family: 'Fira', cursive;
     box-sizing: border-box;
 
     @media only screen and (max-width: 1400px) {
@@ -16,10 +16,16 @@ html {
 
 body {
     font-size: $font-small;
+
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+        background-color: $color-brown;
+    }
 }
 
 .main {
     background-color: $color-brown;
+
+    position: relative;
 }
 
 * a,

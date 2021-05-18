@@ -15,9 +15,11 @@ const ready = callback => {
     }
 }
 
+///// DEFINING GLOBAL CONSTANTS
+const GALLERY_LAST_PHOTO_CLASS = '.gallery__photo--9';
+const GALLERY_FIRST_PHOTO_SECOND_SECTION_CLASS = '.gallery__photo--7';
+
 // Move photogallery
-let lastTop = 0;
-let lastRight = 0;
 let maxPositionTop;
 const setMaxPositionTop = (galleryPhotos) => {
 
@@ -36,7 +38,7 @@ const setMaxPositionTop = (galleryPhotos) => {
     }
 
     // Get position of last photo
-    const lastPhoto = document.querySelector('.gallery__photo--6');
+    const lastPhoto = document.querySelector(GALLERY_LAST_PHOTO_CLASS);
     const lastPhotoTop = lastPhoto.getBoundingClientRect().top;
     
     maxPositionTop = (lastPhotoTop + -curTop - 50 * vh).toFixed(2);
@@ -45,7 +47,16 @@ const setMaxPositionTop = (galleryPhotos) => {
 const moveGallery = (e, galleryPhotos, galleryMenuItems, galleryScrollbar, galleryThumb) => {
 
     // Get delta Y value of scroll
-    let deltaY = e.deltaY;
+    let deltaY;    
+    if (e.isSynthetic) {
+        deltaY = e.deltaY;
+    } else {
+        if (e.deltaY > 0) {
+            deltaY = 100;
+        } else {
+            deltaY = -100;
+        }
+    }
 
     // Get how many pixels in rem unit
     const html = document.getElementsByTagName('html')[0];
@@ -119,7 +130,7 @@ const moveGallery = (e, galleryPhotos, galleryMenuItems, galleryScrollbar, galle
 
 const updateActiveClass = (galleryMenuItems, curTop, vh) => {
     // Update active class on menu items
-    const middlePhoto = document.querySelector('.gallery__photo--4');
+    const middlePhoto = document.querySelector(GALLERY_FIRST_PHOTO_SECOND_SECTION_CLASS);
     const middlePhotoTop = middlePhoto.getBoundingClientRect().top;
 
     if (middlePhotoTop < -curTop - 50 * vh) {
@@ -157,7 +168,7 @@ const moveGalleryTo = (type, galleryPhotos, galleryMenuItems, galleryScrollbar, 
     }
 
     // Get current top position of 1. photo in 2. section
-    const middlePhotoTop = document.querySelector('.gallery__photo--4').getBoundingClientRect().top;
+    const middlePhotoTop = document.querySelector(GALLERY_FIRST_PHOTO_SECOND_SECTION_CLASS).getBoundingClientRect().top;
 
     switch (type) {
         // Move to first section
@@ -197,13 +208,19 @@ const moveGalleryTo = (type, galleryPhotos, galleryMenuItems, galleryScrollbar, 
 }
 
 // Move photogallery with a scrollbar
+let prevScreenY = 0;
 const moveGalleryWithScrollbar = (galleryPhotos, galleryMenuItems, galleryScrollbar, galleryThumb) => {
 
-    console.log('mouse down');
     // Define function executed on mousemove while holding the thumb
     const moveThumb = e => {
         // Get how much the mouse moved in Y axis
-        const movementY = e.movementY;
+        let movementY = e.movementY;
+
+        // Set movementY if event.movementY is not supported
+        if (!movementY) {
+            movementY = prevScreenY ? e.screenY - prevScreenY : 0;
+            prevScreenY = e.screenY;
+        }
 
         // Get scrollbar and thumb height
         const scrollbarHeight = +galleryScrollbar.offsetHeight;
@@ -213,11 +230,14 @@ const moveGalleryWithScrollbar = (galleryPhotos, galleryMenuItems, galleryScroll
         const scrollableHeight = scrollbarHeight - thumbHeight;
 
         // Count scrolled percentage and pixel value for gallery photos element
-        const scrolledPercentage = movementY / scrollableHeight;
+        const scrolledPercentage = +movementY / scrollableHeight;
         const scrolledGalleryPhotos = scrolledPercentage * maxPositionTop;
 
         // Set up wheel event imitator to pass it to moveGallery()
-        const wheelEventImitator = {deltaY: scrolledGalleryPhotos};
+        const wheelEventImitator = {
+            deltaY: scrolledGalleryPhotos,
+            isSynthetic: true
+        };
 
         // Move photogallery
         moveGallery(wheelEventImitator, galleryPhotos, galleryMenuItems, galleryScrollbar, galleryThumb);
@@ -227,8 +247,8 @@ const moveGalleryWithScrollbar = (galleryPhotos, galleryMenuItems, galleryScroll
         window.removeEventListener('mousemove', moveThumb);
         galleryThumb.style.transition = `all .2s`;
         galleryPhotos.style.transition = `all .2s`;
-        console.log('mouse up');
         window.removeEventListener('mouseup', mouseupCleanUp);
+        prevScreenY = 0;
     }
 
     // Remove transition on thumb and gallery photos to prevent laggy scrolling
@@ -255,6 +275,10 @@ const resizeGallery = (e, galleryPhotos, galleryMenuItems, galleryThumb) => {
 // Check if one of parents has a class
 const hasOneOfParentsClass = (element, className) => {
     const parentElement = element.parentElement;
+
+    // For IE, otherwise not necessary
+    if (!parentElement) return false;
+
     if (parentElement.classList.contains(className)) {
         return true;
     }
@@ -269,7 +293,7 @@ const hasOneOfParentsClass = (element, className) => {
 
 
 
-// Calling ready function
+////// Calling ready function
 ready(() => {
     ///// ANIMATIONS
 
@@ -318,7 +342,6 @@ ready(() => {
 
         // Add click and hold event listener for scrollbar thumb
         galleryThumb.addEventListener('mousedown', e => {
-            console.log('thumb clicked');
             // Disable disallow cursor
             e.preventDefault();
             moveGalleryWithScrollbar(galleryPhotos, galleryMenuItems, galleryScrollbar, galleryThumb);
@@ -342,8 +365,18 @@ ready(() => {
 
         // Adjust photogallery after resize
         window.addEventListener('resize', e => {
+            // Set transition to none to prevent bugs while executing setMaxPositionTop()
+            galleryPhotos.style.transition = 'none';
+            // Reset gallery positions after resizing
             resizeGallery(e, galleryPhotos, galleryMenuItems, galleryThumb);
-            setMaxPositionTop(galleryPhotos, galleryMenuItems, galleryScrollbar, galleryThumb);
+            // Set maximum top value for galleryPhotos
+            setMaxPositionTop(galleryPhotos);
+            // Restore galleryPhotos transition
+            galleryPhotos.style.transition = 'all .2s';
         });
     }
 });
+
+//////////////////////////////////////////
+///// Service workers
+'serviceWorker' in navigator && navigator.serviceWorker.register('/sw.js');

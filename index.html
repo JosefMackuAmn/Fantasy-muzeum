@@ -4,9 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fantasy muzeum</title>
+    <link rel="shortcut icon" href="/imgs/logo-ponorka.png">
     <link rel="stylesheet" href="css/main.css">
-    <link href="https://fonts.googleapis.com/css2?family=Nova+Flat&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Goudy+Bookletter+1911&display=swap" rel="stylesheet">
+    <meta name="description" content="Svět fantazie pro každého, to je Fantasy muzeum a galerie. Až 3metrové exponáty robotů, vzducholodí a ponorek, inspirované romány Julese Vernea a Karla Čapka.">
+    <link rel="canonical" href="https://www.fantasymuzeum.cz" />
+    <meta name="robots" content="index, follow" />
+    <meta property="og:title" content="Fantasy muzeum" />
+    <meta property="og:description" content="Až 3metrové exponáty robotů, vzducholodí a ponorek, inspirované romány Julese Vernea." />
+    <meta property="og:url" content="https://www.fantasymuzeum.cz/" />
+    <meta property="og:image" content="https://www.fantasymuzeum.cz/imgs/og-image.jpg" />
+    <meta property="og:image:secure_url" content="https://www.fantasymuzeum.cz/imgs/og-image.jpg" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:locale" content="cs_CZ" />
+    <meta property="og:type" content="website" />
 </head>
 <body>
     <header class="index__header header">
@@ -14,40 +24,46 @@
             <img src="./imgs/logo-ponorka.png" alt="Logo" class="navigation__logo">
             <div class="navigation__menu" id="menu-btn">MENU</div>
             <ul class="navigation__list" id="navigation-list">
-                <li class="navigation__item active"><a href="index.html">Domů</a></li>
-                <li class="navigation__item"><a href="gallery.html">Fotogalerie</a></li>
-                <li class="navigation__item"><a href="atelier.html">Fotoateliér</a></li>
-                <li class="navigation__item"><a href="contact.html">Kontakt</a></li>
+                <li class="navigation__item active"><a href="/">Domů</a></li>
+                <li class="navigation__item"><a href="/fotogalerie">Fotogalerie</a></li>
+                <li class="navigation__item"><a href="/fotoatelier">Fotoateliér</a></li>
+                <li class="navigation__item"><a href="/kontakt">Kontakt</a></li>
             </ul>
         </nav>
         <img class="index__header__image" alt="Robot"
             src="imgs/hero-edited-1920.jpg"
             srcset="imgs/hero-edited-1920.jpg 1920w,
-                    imgs/hero-edited-1600.jpg 1600w,
-                    imgs/hero-edited-1024.jpg 1024w,
-                    imgs/hero-edited-768.jpg 768w"
-                    sizes="100vw"
+                    imgs/hero-edited-1600.jpg 1600w"
+            sizes="100vw"
         ></img>
         <div class="index__header__overlay"></div>
         <ul class="contact-line">
-            <li class="contact-line__item">Brno - venkov, Černvír 30</li>
+            <li class="contact-line__item">Brno - venkov, <br class="contact-line__br">Černvír 30</li>
             <li class="contact-line__item">+420 603 927 099</li>
-            <li class="contact-line__item">Červenec, Srpen; <br class="contact-line__br">Pátek - Pondělí; 10h - 18h</li>
+            <li class="contact-line__item">Červenec, Srpen; <br class="contact-line__br">Sobota - Pondělí; <br class="contact-line__br">10h - 18h</li>
         </ul>
     </header>
     <main class="main index">
         <h1 class="heading-1">Fantasy muzeum & galerie</h1>
         <section class="index__features">
             <div class="lightbox">
-                <img src="imgs/raketa.png" alt="Raketa" class="lightbox__image">
+                <img alt="Raketa" class="lightbox__image"
+                     src="imgs/raketa.png" >
                 <h3 class="heading-3">Až třímetrové exponáty</h3>
             </div>
             <div class="lightbox">
-                <img src="imgs/kalich.png" alt="Trofej" class="lightbox__image">
+                <img alt="Trofej" class="lightbox__image"
+                     src="imgs/kalich-500.png"
+                     srcset="imgs/kalich-500.png 500w,
+                             imgs/kalich-450.png 450w,
+                             imgs/kalich-400.png 400w" >
                 <h3 class="heading-3">1. Steampunkové muzeum na Moravě</h3>
             </div>
             <div class="lightbox">
-                <img src="imgs/golem.png" alt="Robot" class="lightbox__image">
+                <img alt="Robot" class="lightbox__image"
+                     src="imgs/golem-500.png"
+                     srcset="imgs/golem-500.png 500w,
+                             imgs/golem-400.png 400w" >
                 <h3 class="heading-3">Roboti, ponorky, vzducholodě</h3>
             </div>
             <img src="imgs/squares.svg" alt="Čtverečky" class="squares squares--1">
@@ -55,7 +71,7 @@
         </section>
         <section class="index__gallery-link">
             <img class="index__gallery-link__head" alt="Hlava robota" id="movable-head"
-                 src="imgs/hlava.png"
+                 src="imgs/hlava-900.png"
                  srcset="imgs/hlava-900.png 900w,
                          imgs/hlava-600.png 600w,
                          imgs/helper.png 10w"
@@ -67,24 +83,26 @@
                     <img src="imgs/ponorka.png" alt="Ponorka" class="gallery-link__image">
                     <img src="imgs/squares.svg" alt="Čtverečky" class="squares">
                 </div>
-                <a href="gallery.html" class="gallery-link__link link">Fotogalerie<br>-></a>
+                <a href="/fotogalerie" class="gallery-link__link link">Fotogalerie<br>-></a>
             </div>
         </section>
         <section class="index__about">
             <container class="about">
-                <a href="/contact.html" class="link link--mobile">Kontakt -></a>
+                <a href="/kontakt" class="link link--mobile">Kontakt -></a>
                 <div class="about__left">
                     <h4 class="heading-4">Tomáš Krištof</h4>
                     <p class="paragraph">
                         Divadelní a filmový kaskadér, výtvarník, milovník sci-fi a fantasy tématiky, ale hlavně veselý člověk.<br><br><br class="hide">
                         Své volné chvíle zaslíbil výtvarnému umění - FANTASY PLASTIKÁM inspirovaným dílem Julese Verna, Karla Zemana a Karla Čapka. <br><br><br class="hide">
-                        Jeho tvorba je ve stylu steampunk a trash art. Tvoří díla nadlidských rozměrů s důrazem na detail. Základním kamenem pro plastiky je industriální odpad - recyklujeme jinak! Železo, hliník, plasty, polystyren, dřevo, sklo, všechny tyto materiály používá ve svýh dílech.
+                        Jeho tvorba je ve stylu steampunk a trash art. Tvoří díla nadlidských rozměrů s důrazem na detail. Základním kamenem pro plastiky je industriální odpad - recyklujeme jinak! Železo, hliník, plasty, polystyren, dřevo, sklo, všechny tyto materiály používá ve svých dílech.
                     </p>
                 </div>
                 <div class="about__right">
                     <div class="about__right__image">
-                        <img src="imgs/kristofovi.jpg" alt="Krištofovi" class="about__right__image__author">
-                        <a href="/contact.html" class="link">Kontakt -></a>
+                        <img src="imgs/kristofovi-600.jpg" alt="Krištofovi" class="about__right__image__author"
+                             srcset="imgs/kristofovi-600.jpg 600w,
+                                     imgs/kristofovi-450.jpg 450w">
+                        <a href="/kontakt" class="link">Kontakt -></a>
                         <img src="imgs/squares.svg" alt="Čtverečky" class="squares">
                     </div>
                 </div>
@@ -94,7 +112,7 @@
     <footer class="footer">
         <div class="footer__copyright">&copy; Fantasy muzeum & galerie</div>
         <img src="imgs/logo-ponorka.png" alt="Logo" class="footer__logo">
-        <a href="https://amnionweb.cz" target="_blank" class="footer__webmaster">Vytvořil AmnioN Web</a>
+        <a href="https://amnionweb.cz" target="_blank" rel="noopener" class="footer__webmaster">Vytvořil AmnioN Web</a>
     </footer>
     <script src="./js/script.js"></script>
 </body> 

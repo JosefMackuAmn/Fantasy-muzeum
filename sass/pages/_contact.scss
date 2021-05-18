@@ -2,7 +2,7 @@
     height: calc(100vh - 5rem);
     overflow: hidden;
 
-    @media only screen and (max-height: 750px) {
+    @media only screen and (max-height: 820px) {
         min-height: calc(100vh - 5rem);
         height: unset;
     }
@@ -59,7 +59,7 @@
             margin-left: auto;
 
             display: flex;
-            align-items: flex-end;
+            align-items: stretch;
             
             @media only screen and (max-width: 1000px) {
                 flex-direction: column;
@@ -91,6 +91,7 @@
 
                 &:last-child {
                     margin-right: -1rem;
+                    height: 100%;
 
                     @media only screen and (max-width: 1000px) {
                         margin-right: unset;
@@ -113,10 +114,12 @@
 
                 & > img, & > a {
                     margin-right: 1rem;
-                    height: $font-bigger;
 
                     @media only screen and (max-width: 1000px) {
                         margin-right: unset;
+                    }
+                    @media not all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+                        height: $font-bigger;
                     }
                 }
 
@@ -197,7 +200,7 @@
                 width: 50%;
                 margin-right: 15%;
             }
-            @media only screen and (max-height: 750px) {
+            @media only screen and (max-height: 820px) {
                 height: 40rem;
             }
             @media only screen and (max-width: 1000px) {
@@ -222,11 +225,14 @@
 
             & li {
                 color: $color-orange;
-                margin-bottom: 3rem;
                 font-size: $font-bigger;
 
                 @media only screen and (min-height: 1200px) and (min-width: 2100px) {
                     font-size: $font-biggest;
+                }
+
+                &:not(:last-child) {
+                    margin-bottom: 3rem;
                 }
 
                 &:nth-child(3) {
@@ -238,6 +244,7 @@
                     @media only screen and (max-width: 1000px) {
                         margin: 0 10rem 7rem 10rem;
                         text-align: center;
+                        line-height: 135%;
                     }
                 }
 
@@ -245,6 +252,10 @@
                     color: $color-beige-light;
                 }
             }
+        }
+
+        &__emphasis {
+            font-weight: 600;
         }
     }
 }

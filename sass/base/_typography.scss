@@ -10,6 +10,9 @@
     @media only screen and (max-width: 700px) {
         font-size: $font-biggest;
     }
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+        margin-top: 5rem;
+    }
 }
 
 .heading-2 {
@@ -65,6 +68,7 @@
     }
     @media only screen and (max-width: 600px) {
         font-size: $font-bigger-3;
+        text-align: center;
     }
 
     & span {

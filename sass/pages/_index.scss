@@ -45,6 +45,10 @@
         & .squares {
             width: 14%;
 
+            @media only screen and (max-width: 800px) {
+                display: none;
+            }
+
             &--1 {
                 left: 0;
                 top: 0;

@@ -102,6 +102,7 @@
         font-family: 'Goudy Bookletter 1911', 'serif';
         font-size: $font-biggest;
         color: $color-gold;
+        letter-spacing: .2rem;
 
         @media only screen and (min-width: 751px) {
             display: none;

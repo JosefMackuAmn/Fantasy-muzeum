@@ -19,6 +19,18 @@
         flex-direction: column;
     }
 
+    &--gallery {
+        @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+            @media all and (min-width: 1101px) {
+                position: absolute;
+                bottom: 0;
+            }
+            @media all and (max-width: 1100px) {
+                margin-top: 16rem;
+            }
+        }
+    }
+
     &__copyright {
         color: $color-gold;
 

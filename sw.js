@@ -1,5 +1,5 @@
-const CACHE_STATIC_NAME = 'static-v1.1.9';
-const CACHE_DYNAMIC_NAME = 'dynamic-v1.1.9';
+const CACHE_STATIC_NAME = 'static-v1.2.0';
+const CACHE_DYNAMIC_NAME = 'dynamic-v1.2.0';
 
 const STATIC_PATHS = [
     'imgs/squares.svg',

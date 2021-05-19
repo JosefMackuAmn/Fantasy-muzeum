@@ -379,4 +379,12 @@ ready(() => {
 
 //////////////////////////////////////////
 ///// Service workers
-'serviceWorker' in navigator && navigator.serviceWorker.register('/sw.js');
+// 'serviceWorker' in navigator && navigator.serviceWorker.register('/sw.js');
+if (navigator && 'serviceWorker' in navigator) {
+    navigator.serviceWorker.getRegistrations()
+        .then((registrations) => {
+            for (let registration of registrations) {
+                registration.unregister();
+            }
+        })
+}

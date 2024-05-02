@@ -387,4 +387,10 @@ if (navigator && 'serviceWorker' in navigator) {
                 registration.unregister();
             }
         })
+    caches.keys()
+        .then(keyList => {
+            return Promise.all(keyList.map(key => {
+                caches.delete(key);
+            }))
+        })
 }

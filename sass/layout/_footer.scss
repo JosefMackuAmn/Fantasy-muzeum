@@ -33,6 +33,7 @@
 
     &__copyright {
         color: $color-gold;
+        text-align: center;
 
         @media only screen and (max-width: 700px) {
             margin-bottom: 2rem;

@@ -193,7 +193,7 @@
 
     &__map {
       width: 40%;
-      margin-right: 20%;
+      margin-right: 10%;
       height: 100%;
 
       transform: translateZ(0);
@@ -215,10 +215,13 @@
 
     &__list {
       list-style: none;
+      max-width: 650px;
 
       transform: translateZ(0);
 
       @media only screen and (max-width: 1150px) {
+        width: 80%;
+
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -227,6 +230,11 @@
       & li {
         color: $color-orange;
         font-size: $font-bigger;
+
+        @media only screen and (max-width: 1150px) {
+          width: 100%;
+          text-align: center;
+        }
 
         @media only screen and (min-height: 1200px) and (min-width: 2100px) {
           font-size: $font-biggest;
@@ -239,7 +247,7 @@
         &:nth-child(3) {
           margin-bottom: 7rem;
         }
-        /* &:nth-child(4) {
+        &:nth-child(4) {
           margin-bottom: 7rem;
 
           @media only screen and (max-width: 1150px) {
@@ -247,7 +255,7 @@
             text-align: center;
             line-height: 135%;
           }
-        } */
+        }
 
         & span {
           color: $color-beige-light;
@@ -256,7 +264,7 @@
     }
 
     &__br {
-      @media only screen and (min-width: 601px) {
+      @media only screen and (min-width: 1151px) {
         display: none;
       }
     }
